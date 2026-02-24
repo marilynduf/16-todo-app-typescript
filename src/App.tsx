@@ -1,13 +1,17 @@
 import { useState } from "react";
 import Todos from "./components/Todos";
+import Todo from "./models/Todo";
+
 import "./App.css";
 
 function App() {
     const [count, setCount] = useState(0);
     const items = [
-        "Get my dream job at Radio-Canda",
-        "I understand and can writes Typescript fundamentals ",
+        new Todo("Get my dream job at Radio-Canda"),
+        new Todo("I understand and writes Typescript fundamentals"),
     ];
+
+    console.log(items);
 
     return (
         <>
