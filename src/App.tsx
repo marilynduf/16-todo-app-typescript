@@ -6,18 +6,16 @@ import "./App.css";
 
 function App() {
     const [count, setCount] = useState(0);
-    const items = [
+    const todos = [
         new Todo("Get my dream job at Radio-Canda"),
-        new Todo("I understand and writes Typescript fundamentals"),
+        new Todo("I understand and write Typescript fundamentals"),
     ];
-
-    console.log(items);
 
     return (
         <>
             <div></div>
             <h1>Todo app with typeScript</h1>
-            <Todos items={items}></Todos>
+            <Todos items={todos}></Todos>
             <div className="card">
                 <button onClick={() => setCount((count) => count + 1)}>
                     count is {count}
