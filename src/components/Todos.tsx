@@ -10,7 +10,7 @@ const Todos = (props: TodosProps) => {
     return (
         <ul style={{ textAlign: "left" }}>
             {props.items?.map((item) => (
-                <TodoItem key={item.id} item={item}></TodoItem>
+                <TodoItem key={item.id} text={item.text}></TodoItem>
             ))}
         </ul>
     );

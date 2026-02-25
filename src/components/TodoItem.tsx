@@ -1,12 +1,5 @@
-import Todo from "../models/Todo";
-
-type TodoItemProps = {
-    item: Todo;
-};
-
-const TodoItem = (props: TodoItemProps) => {
-    console.log(props);
-    return <li>{props.item.text}</li>;
+const TodoItem = (props: { text: string }) => {
+    return <li>{props.text}</li>;
 };
 
 export default TodoItem;
