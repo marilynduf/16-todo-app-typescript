@@ -10,15 +10,25 @@ function App() {
 
     const createTodo = (text: string) => {
         const newTodo = new Todo(text, new Date());
-        setTodos((prevState: Todo[]) => {
-            return [...prevState, newTodo];
+        setTodos((prevTodos: Todo[]) => {
+            return [...prevTodos, newTodo];
+        });
+    };
+
+    const deleteTodo = (id: string) => {
+        setTodos((prevTodos: Todo[]) => {
+            return prevTodos.filter((todo) => todo.id !== id);
         });
     };
 
     return (
         <>
             <h1>Todo app with typeScript</h1>
-            <Todos onSubmitTask={createTodo} items={todos}></Todos>
+            <Todos
+                onDeleteTask={deleteTodo}
+                onSubmitTask={createTodo}
+                items={todos}
+            ></Todos>
             <div className="card">
                 <button onClick={() => setCount((count) => count + 1)}>
                     count is {count}

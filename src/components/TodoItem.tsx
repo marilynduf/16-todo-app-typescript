@@ -1,7 +1,13 @@
-const TodoItem = ({ text, date }: { text: string; date: Date }) => {
+const TodoItem = (props: {
+    id: string;
+    text: string;
+    date: Date;
+    onDeleteTask: (id: string) => void;
+}) => {
     return (
         <li>
-            {text} - {date.toLocaleDateString()}
+            {props.text} - {props.date.toLocaleDateString()}
+            <button onClick={() => props.onDeleteTask(props.id)}>delete</button>
         </li>
     );
 };
