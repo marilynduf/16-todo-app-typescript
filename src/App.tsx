@@ -10,9 +10,7 @@ function App() {
 
     const createTodo = (text: string) => {
         const newTodo = new Todo(text, new Date());
-        setTodos((prevTodos: Todo[]) => {
-            return [...prevTodos, newTodo];
-        });
+        setTodos((prevTodos: Todo[]) => [...prevTodos, newTodo]);
     };
 
     const deleteTodo = (id: string) => {
