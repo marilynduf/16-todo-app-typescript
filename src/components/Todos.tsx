@@ -1,18 +1,21 @@
 // import React from "react";
 import Todo from "../models/Todo";
 import TodoItem from "./TodoItem";
+import NewTodo from "./NewTodo";
 
-type TodosProps = {
-    items?: Todo[];
-};
-
-const Todos = (props: TodosProps) => {
+const Todos = (props: {
+    items: Todo[];
+    onSubmitTask: (text: string) => void;
+}) => {
     return (
-        <ul style={{ textAlign: "left" }}>
-            {props.items?.map((item) => (
-                <TodoItem key={item.id} text={item.text} date={item.date} />
-            ))}
-        </ul>
+        <>
+            <NewTodo onSubmitTask={props.onSubmitTask}></NewTodo>
+            <ul style={{ textAlign: "left" }}>
+                {props.items?.map((item) => (
+                    <TodoItem key={item.id} text={item.text} date={item.date} />
+                ))}
+            </ul>
+        </>
     );
 };
 
