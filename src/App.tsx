@@ -7,13 +7,12 @@ import "./App.css";
 function App() {
     const [count, setCount] = useState(0);
     const todos = [
-        new Todo("Get my dream job at Radio-Canda"),
-        new Todo("I understand and write Typescript fundamentals"),
+        new Todo("Get my dream job at Radio-Canda", new Date()),
+        new Todo("I understand and write Typescript fundamentals", new Date()),
     ];
 
     return (
         <>
-            <div></div>
             <h1>Todo app with typeScript</h1>
             <Todos items={todos}></Todos>
             <div className="card">
